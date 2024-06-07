@@ -1,7 +1,8 @@
 {
-  "/page": "app/page.js",
-  "/api/auth/[...nextauth]/route": "app/api/auth/[...nextauth]/route.js",
-  "/api/business/approve-business/route": "app/api/business/approve-business/route.js",
+  "/_not-found/page": "app/_not-found/page.js",
   "/admin/page": "app/admin/page.js",
-  "/api/business/get-business-list/route": "app/api/business/get-business-list/route.js"
+  "/page": "app/page.js",
+  "/api/business/get-business-list/route": "app/api/business/get-business-list/route.js",
+  "/api/business/approve-business/route": "app/api/business/approve-business/route.js",
+  "/api/auth/[...nextauth]/route": "app/api/auth/[...nextauth]/route.js"
 }
