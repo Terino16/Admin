@@ -37,7 +37,7 @@ export default function Business() {
     if (session?.user?.email) {
       fetchBusinesses();
     }
-  }, [session]);
+  }, []);
 
   const approveBusiness = async (businessUserId) => {
     try {
