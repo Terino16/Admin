@@ -124,7 +124,7 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
+import { poppins400,poppins600,poppins700 } from "../app/fonts";
 const AdminProfile = () => {
   const { data: session, status } = useSession();
   const router = useRouter();
@@ -192,71 +192,73 @@ const AdminProfile = () => {
 
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-4">Admin Profile</h1>
+      <h1 className={`${poppins700.className} mt-7 mb-6 text-[40px] font-black ml-3`}>Admin Profile</h1>
       <div className="bg-white rounded p-4">
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
-            <label className="block text-gray-700">First Name</label>
+            <label className={`${poppins600.className} block text-gray-700`}>First Name</label>
             <input
               type="text"
               name="firstName"
               value={formData.firstName}
               onChange={handleChange}
-              className="w-full p-2 border rounded"
+              className={`${poppins400.className} w-full p-2 rounded border border-textgray focus:ring focus:ring-tealblue focus:outline-none focus:border-none`}
             />
           </div>
           <div className="mb-4">
-            <label className="block text-gray-700">Last Name</label>
+            <label className={`${poppins600.className} block text-gray-700`}>Last Name</label>
             <input
               type="text"
               name="lastName"
               value={formData.lastName}
               onChange={handleChange}
-              className="w-full p-2 border rounded"
+              className={`${poppins400.className} w-full p-2 rounded border border-textgray focus:ring focus:ring-tealblue focus:outline-none focus:border-none`}
             />
           </div>
           <div className="mb-4">
-            <label className="block text-gray-700">Email</label>
+            <label className={`${poppins600.className} block text-gray-700`}>Email</label>
             <input
               type="email"
               name="email"
               value={formData.email}
               onChange={handleChange}
               disabled={true}
-              className="w-full p-2 border rounded"
+              className={`${poppins400.className} w-full p-2 rounded border border-textgray focus:ring focus:ring-tealblue focus:outline-none focus:border-none`}
             />
           </div>
           <div className="mb-4">
-            <label className="block text-gray-700">Phone Number</label>
+            <label className={`${poppins600.className} block text-gray-700`}>Phone Number</label>
             <input
               type="text"
               name="phoneNumber"
               value={formData.phoneNumber}
               onChange={handleChange}
-              className="w-full p-2 border rounded"
+              className={`${poppins400.className} w-full p-2 rounded border border-textgray focus:ring focus:ring-tealblue focus:outline-none focus:border-none`}
             />
           </div>
           <div className="mb-4">
-            <label className="block text-gray-700">Old Password</label>
+            <label className={`${poppins600.className} block text-gray-700`}>Old Password</label>
             <input
               type="password"
               name="oldPassword"
               value={formData.oldPassword}
               onChange={handleChange}
-              className="w-full p-2 border rounded"
+              className={`${poppins400.className} w-full p-2 rounded border border-textgray focus:ring focus:ring-tealblue focus:outline-none focus:border-none`}
             />
           </div>
           <div className="mb-4">
-            <label className="block text-gray-700">New Password</label>
+            <label className={`${poppins600.className} block text-gray-700`}>New Password</label>
             <input
               type="password"
               name="newPassword"
               value={formData.newPassword}
               onChange={handleChange}
-              className="w-full p-2 border rounded"
+              className={`${poppins400.className} w-full p-2 rounded border border-textgray focus:ring focus:ring-tealblue focus:outline-none focus:border-none`}
             />
           </div>
-          <button type="submit" className="bg-blue-500 text-white p-2 rounded">
+          <button type="submit" className={`${
+                        poppins600.className
+                      } text-[16px] py-2 rounded md:float-left float-right bg-[#CF2D21] text-white px-8`}>
             Update
           </button>
         </form>

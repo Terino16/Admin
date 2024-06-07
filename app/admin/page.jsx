@@ -13,6 +13,7 @@ const Content = () => {
   const router = useRouter();
 
   useEffect(() => {
+    console.log("No session found")
     if (!session) {
       router.push("/");
     }
@@ -37,7 +38,7 @@ const Content = () => {
 const Page = () => {
   return (
     <div className="flex">
-      <div className="hidden lg:block border-r border-red-500">
+      <div className="hidden lg:block">
         <Sidebar />
       </div>
       <Content />

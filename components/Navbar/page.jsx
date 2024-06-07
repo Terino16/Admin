@@ -6,13 +6,13 @@ import { usePathname } from "next/navigation";
 import { signOut, useSession } from "next-auth/react";
 import { poppins400 } from "../../app/fonts";
 import MenuIcon from "@mui/icons-material/Menu";
-
+import Sidebar from "../Sidebar";
 const Navbar = () => {
   const pathname = usePathname();
   const { data: session } = useSession();
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [sideMenuOpen, setSideMenuOpen] = useState(false);
-
+  
   const toggleDropdown = () => {
     setDropdownOpen(!dropdownOpen);
   };
@@ -25,11 +25,11 @@ const Navbar = () => {
     <div className="mb-1 z-10 bg-white sticky top-0 w-full flex lg:px-[40px] lg:py-[16px] px-[16px] py-[21px] items-center justify-between shadow-md">
       <div className="flex items-center">
         <div>
-          {pathname === "/gettingstarted" && (
+          
             <button className="lg:hidden mr-[7px]" onClick={toggleSideMenu}>
               <MenuIcon />
             </button>
-          )}
+          
         </div>
         <Link href={"/"} className="lg:mt-0 mt-1">
           <img
@@ -113,6 +113,11 @@ const Navbar = () => {
           </div>
         )}
       </div>
+      {sideMenuOpen && (
+        <div className="absolute top-[70px] left-0 w-full  z-10 bg-white rounded-md shadow-lg md:hidden">
+          <Sidebar />
+        </div>
+      )}
     </div>
   );
 };

@@ -4,11 +4,6 @@ import { poppins700, poppins400, poppins500, poppins600 } from "../app/fonts";
 import { toast } from "react-toastify";
 import { useSession } from "next-auth/react";
 
-const statusClasses = {
-  Pending: "bg-yellow text-yellow-800",
-  Approved: "bg-green text-green-800",
-  Rejected: "bg-red-300 text-black",
-};
 
 const BusinessTableTailwind = ({ rows }) => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -115,9 +110,9 @@ const BusinessTableTailwind = ({ rows }) => {
                   </td>
                   <td className="py-4 px-6">
                     <span
-                      className={`${poppins600.className} text-[16px] px-4 py-2 rounded-full`}
+                      className={`${poppins600.className} text-[16px] ${row.isProfileApproved == false ? "text-yellow" : "text-green-800"}`}
                     >
-                      {row.isProfileApproved == false ? "pending" : "completed"}
+                      {row.isProfileApproved == false ? "Pending" : "Aprroved"}
                     </span>
                   </td>
                   <td className="py-4 px-6">
@@ -125,10 +120,10 @@ const BusinessTableTailwind = ({ rows }) => {
                       onClick={handleApproveBusiness.bind(this, row._id, row.isProfileApproved ? false : true)}
                       className={`${
                         poppins600.className
-                      } text-[16px] px-5 py-2 rounded md:float-left float-right ${
+                      } text-[16px] py-2 rounded md:float-left float-right ${
                         row.isProfileApproved == false
-                          ? "bg-[#CF2D21] text-white"
-                          : "bg-[#F3F3F3] text-black"
+                          ? "bg-[#CF2D21] text-white px-8"
+                          : "bg-[#F3F3F3] text-black px-5"
                       }`}
                     >
                       {row.isProfileApproved ? "Unapprove" : "Approve"}

@@ -11,7 +11,7 @@ module.exports = {
         'half': 'inset(0 0 0 50%)',
       },
       colors: {
-        customBlue: 'rgb(50, 121, 148)',
+          'customBlue': 'rgb(50, 121, 148)',
           'tealblue': '#327994',
           'dengoorange': '#CF2D21',
           'hoverdengo':'#F40D15',
@@ -19,7 +19,6 @@ module.exports = {
           'lightgray':'#F3F3F3',
           'pink': '#ff49db',
           'orange': '#ff7849',
-          'green': '#13ce66',
           'yellow': '#ffc82c',
           'gray-dark': '#273444',
           'gray': '#8492a6',
@@ -27,7 +26,8 @@ module.exports = {
           'cornblue':'#2084B1',
           'lightcornblue':'#EDF6FE',
           'bordergray':'#C3C3C3',
-          'buttonred':'#CF2D21'
+          'buttonred':'#CF2D21',
+          'Customgreen':'#023020'
 
         },
     },
