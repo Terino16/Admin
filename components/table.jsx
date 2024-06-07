@@ -40,6 +40,7 @@ const BusinessTableTailwind = ({ rows }) => {
       const data = await res.json();
 
       if(!data.success) {
+        console.log(data.error);
         return toast.error(data.error);
       }
       toast.success(data.message);
