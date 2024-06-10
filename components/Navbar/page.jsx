@@ -114,7 +114,7 @@ const Navbar = () => {
         )}
       </div>
       {sideMenuOpen && (
-        <div className="absolute top-[70px] left-0 w-full  z-10 bg-white rounded-md shadow-lg md:hidden">
+        <div className="absolute top-[70px] left-0 w-full  z-10 bg-white rounded-md shadow-lg lg:hidden">
           <Sidebar />
         </div>
       )}

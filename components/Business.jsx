@@ -83,7 +83,7 @@ export default function Business() {
 
       <main className="flex flex-col bg-gray-100 px-2">
         <div className={`${poppins700.className} mt-7 mb-6 text-[40px] font-black`}>
-            Business Details
+            All Businesses
         </div>
         <div className='w-full lg:pr-6'>
          <BusinessTable rows={businesses} />

@@ -117,7 +117,7 @@ const Page = () => {
           <div className="flex flex-col items-center justify-between space-y-8 w-full ">
             <button
               type="submit"
-              className={`${poppins600.className} text-white bg-[#CF2D21] w-full   py-[10px] text[16px] rounded-[4px] `}
+              className={`${poppins600.className} text-white bg-dengologored w-full   py-[10px] text[16px] rounded-[4px] `}
             >
               Sign In
             </button>

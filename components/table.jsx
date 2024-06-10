@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { poppins700, poppins400, poppins500, poppins600 } from "../app/fonts";
 import { toast } from "react-toastify";
 import { useSession } from "next-auth/react";
-
+import Link from "next/link";
 
 const BusinessTableTailwind = ({ rows }) => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -97,12 +97,14 @@ const BusinessTableTailwind = ({ rows }) => {
                     className={`${poppins400.className} text-[16px] py-3 px-6 text-left`}
                   >
                     {index + 1}
+                  </td >
+                  <td className={`${poppins400.className} text-[16px] py-3 px-6 text-left`}>
+                  <Link href={`/b/${row._id}`}>
+
+<span className="text-blue-500 hover:underline">{row.businessName}</span>
+</Link>
                   </td>
-                  <td
-                    className={`${poppins400.className} text-[16px] py-3 px-6 text-left`}
-                  >
-                    {row.businessName}
-                  </td>
+
                   <td
                     className={`${poppins400.className} text-[16px] py-3 px-6 text-left`}
                   >

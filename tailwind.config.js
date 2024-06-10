@@ -27,7 +27,8 @@ module.exports = {
           'lightcornblue':'#EDF6FE',
           'bordergray':'#C3C3C3',
           'buttonred':'#CF2D21',
-          'Customgreen':'#023020'
+          'Customgreen':'#023020',
+          'dengologored':'#FE5757'
 
         },
     },
