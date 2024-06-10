@@ -2,13 +2,15 @@
 import { useState, useEffect } from "react";
 import { useSession } from "next-auth/react";
 import Head from 'next/head';
-import BusinessTable from "./table";
-import { poppins700 } from '../app/fonts';
-import { toast } from "react-toastify";
+import BusinessTable from './table';
+import { poppins700,poppins400,poppins500,poppins600 } from '../app/fonts';
+
 
 export default function Business() {
   const { data: session } = useSession();
+  console.log(session, "Admin");
   const [businesses, setBusinesses] = useState([]);
+
 
   useEffect(() => {
     const fetchBusinesses = async () => {
@@ -37,30 +39,37 @@ export default function Business() {
     }
   }, [session]);
 
-  const handleApproveBusiness = async (businessUserId, approve) => {
+  const approveBusiness = async (businessUserId) => {
     try {
       const res = await fetch("/api/business/approve-business", {
         method: "POST",
         body: JSON.stringify({
           userId: session?.user?.id,
           businessUserId,
-          approve
         }),
         headers: {
           "Content-Type": "application/json",
         },
       });
+
+      if (!res.ok) {
+        const errorData = await res.json();
+        toast.error(errorData.error);
+        return;
+      }
+
       const data = await res.json();
 
-      if (!data.success) {
-        return toast.error(data.error);
+      if (data.success) {
+        toast.success(data.message);
+        setBusinesses((prev) =>
+          prev.filter((business) => business._id !== businessUserId)
+        );
+      } else {
+        toast.error(data.error);
       }
-      setBusinesses(prevBusinesses => prevBusinesses.map(business =>
-        business._id === businessUserId ? { ...business, isProfileApproved: approve } : business
-      ));
-      toast.success(data.message);
-    } catch (e) {
-      toast.error(e.message);
+    } catch (error) {
+      toast.error("Failed to approve business");
     }
   };
 
@@ -77,7 +86,7 @@ export default function Business() {
             Business Details
         </div>
         <div className='w-full lg:pr-6'>
-         <BusinessTable rows={businesses} onApprove={handleApproveBusiness} />
+         <BusinessTable rows={businesses} />
         </div>
         
       </main>

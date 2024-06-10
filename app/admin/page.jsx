@@ -9,12 +9,12 @@ import Profile from "../../components/profile.jsx";
 
 const Content = () => {
   const { selectedOption } = useSelectedOption();
-  const { data: session } = useSession();
+  const { data: session,status } = useSession();
   const router = useRouter();
 
   useEffect(() => {
     console.log("No session found")
-    if (!session) {
+    if (status==='unauthenticated') {
       router.push("/");
     }
   }, [session, router]);

@@ -1,9 +1,11 @@
+"use client";
 import React, { useState } from "react";
 import { poppins700, poppins400, poppins500, poppins600 } from "../app/fonts";
 import { toast } from "react-toastify";
 import { useSession } from "next-auth/react";
 
-const BusinessTable = ({ rows, onApprove }) => {
+
+const BusinessTableTailwind = ({ rows }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(10);
   const [searchTerm, setSearchTerm] = useState("");
@@ -14,13 +16,37 @@ const BusinessTable = ({ rows, onApprove }) => {
 
   const filteredRows = rows.filter(
     (row) =>
-      row.businessName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      row.email.toLowerCase().includes(searchTerm.toLowerCase())
+      row.businessName?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      row.email?.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   const currentItems = filteredRows.slice(indexOfFirstItem, indexOfLastItem);
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
+  const handleApproveBusiness = async (businessUserId, approve) => {
+    try {
+      const res = await fetch("/api/business/approve-business", {
+        method: "POST",
+        body: JSON.stringify({
+          userId: session?.user?.id,
+          businessUserId,
+          approve
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      const data = await res.json();
+
+      if(!data.success) {
+        return toast.error(data.error);
+      }
+      toast.success(data.message);
+    } catch (e) {
+      toast.error(e.message);
+    }
+  };
 
   return (
     <div className="flex flex-col">
@@ -66,7 +92,7 @@ const BusinessTable = ({ rows, onApprove }) => {
             </thead>
             <tbody>
               {currentItems.map((row, index) => (
-                <tr key={row._id} className="border-b border-textgray">
+                <tr key={row.id} className="border-b border-textgray">
                   <td
                     className={`${poppins400.className} text-[16px] py-3 px-6 text-left`}
                   >
@@ -86,12 +112,12 @@ const BusinessTable = ({ rows, onApprove }) => {
                     <span
                       className={`${poppins600.className} text-[16px] ${row.isProfileApproved == false ? "text-yellow" : "text-green-800"}`}
                     >
-                      {row.isProfileApproved == false ? "Pending" : "Approved"}
+                      {row.isProfileApproved == false ? "Pending" : "Aprroved"}
                     </span>
                   </td>
                   <td className="py-4 px-6">
                     <button
-                      onClick={() => onApprove(row._id, !row.isProfileApproved)}
+                      onClick={handleApproveBusiness.bind(this, row._id, row.isProfileApproved ? false : true)}
                       className={`${
                         poppins600.className
                       } text-[16px] py-2 rounded md:float-left float-right ${
@@ -152,4 +178,4 @@ const BusinessTable = ({ rows, onApprove }) => {
   );
 };
 
-export default BusinessTable;
+export default BusinessTableTailwind;
