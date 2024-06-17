@@ -1,7 +1,6 @@
-"use client"
+"use client";
 import React, { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
-import { useRouter } from "next/navigation";
 import { poppins400, poppins500, poppins600, poppins700 } from "../../fonts";
 import BusinessLocation from "../../../components/BusinessLocation";
 import BusinessDetails from "../../../components/BusinessDetails";
@@ -9,6 +8,7 @@ import BusinessImages from "../../../components/BusinessImages";
 import BusinessHours from "../../../components/BusinessHours";
 import Sidebar from "../../../components/Sidebar";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+
 const categories = [
   { id: 1, name: "Restaurant" },
   { id: 2, name: "Coffee Shop" },
@@ -25,7 +25,6 @@ const BusinessDetailPage = () => {
   const [business, setBusiness] = useState(null);
   const [error, setError] = useState(null);
   const [approve, setApprove] = useState(false);
-  const router=useRouter();
 
   const { _id } = useParams();
 
@@ -49,6 +48,7 @@ const BusinessDetailPage = () => {
         if (!success) {
           throw new Error(error || "Failed to fetch");
         }
+        console.log(business.businessCategories);
         setBusiness(business);
         setApprove(business.isProfileApproved);
       } catch (error) {
@@ -90,11 +90,6 @@ const BusinessDetailPage = () => {
   const isCategoryChecked = (categoryName) => {
     return business?.businessCategories?.some(b => b.categoryName === categoryName);
   };
-
-  const handleBackClick = () => {
-   router.replace("/allbusiness");
-  };
-
   
   if (error) {
     return (
@@ -123,7 +118,9 @@ const BusinessDetailPage = () => {
         <div className="flex lg:flex-row lg:items-center items-start flex-col lg:justify-between  ">
           <span className="flex items-center space-x-[14px]">
             <button
-            onClick={handleBackClick}
+              onClick={() => {
+                window.location.href = "/allbusiness";
+              }}
             >
               <ArrowBackIcon />
             </button>

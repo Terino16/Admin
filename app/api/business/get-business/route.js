@@ -10,6 +10,7 @@ export async function POST(req) {
     const business = await User.findOne({
       _id,
     });
+    console.log(business)
     return NextResponse.json({ business, success: true }, { status: 200 });
   } catch (e) {
     return NextResponse.json(

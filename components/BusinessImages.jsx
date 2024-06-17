@@ -3,6 +3,7 @@ import React from "react";
 import { poppins400, poppins500, poppins600, poppins700 } from "../app/fonts";
 
 const BusinessImages = ({ business }) => {
+  //console.log(business);
   return (
     <div className="lg:border w-full border-bordergray lg:p-[24px] space-y-[22px] rounded-[6px] mt-[16px]">
       <p className={`${poppins600.className} text-[16px] leading-[24px]`}>

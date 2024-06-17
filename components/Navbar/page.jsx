@@ -1,4 +1,4 @@
-"use client"
+"use client";
 /* eslint-disable @next/next/no-img-element */
 import React, { useState } from "react";
 import Link from "next/link";
@@ -62,7 +62,7 @@ const Navbar = () => {
               />
             </button>
             {dropdownOpen && (
-              <div className="absolute top-10 right-0 mt-2 w-48 bg-white  rounded-md shadow-md">
+              <div className="absolute top-10 right-0 mt-2 w-48 bg-white border rounded-md shadow-lg">
                 {/* <div className="py-2 px-4 text-gray-700">
                   {session.user.email}
                 </div> */}
@@ -86,7 +86,7 @@ const Navbar = () => {
               </Link>
             ) : (
               <a
-                href="mailto:contact@dengo.io"
+                href="mailto:someone@example.com"
                 className="flex items-center space-x-2"
               >
                 <svg

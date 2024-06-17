@@ -1,12 +1,15 @@
 'use client';
 import { useState, useEffect } from "react";
 import { useSession } from "next-auth/react";
+import Head from 'next/head';
 import BusinessTable from './table';
-import { poppins700} from '../app/fonts';
+import { poppins700, poppins400, poppins500, poppins600 } from '../app/fonts';
+import Sidebar from "./Sidebar";
 import { toast } from "react-toastify";
 
 export default function Business() {
   const { data: session } = useSession();
+  console.log(session, "Admin");
   const [businesses, setBusinesses] = useState([]);
 
   useEffect(() => {

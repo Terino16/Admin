@@ -16,12 +16,10 @@ const Page = () => {
   const { data: session, status } = useSession(); // Use data for session data
   const router = useRouter();
 
- useEffect(()=>{
-  if(status=="authenticated")
-    router.push("/allbusiness")
- })
+  // console.log(session, "Session from Sign In"); // Optional: Log session data
 
   const handleSignin = async (e) => {
+    console.log("Sign in");
     e.preventDefault();
     try {
       const res = await signIn("credentials", {
@@ -35,11 +33,10 @@ const Page = () => {
       }
 
       if(res.ok) {
-        router.replace("/allbusiness")
+        router.replace("/admin")
       }
     } catch (error) {
-
-
+      // console.error("An unexpected error happened:", error);
       toast.error("An unexpected error happened");
     }
   };

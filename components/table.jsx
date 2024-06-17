@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState, useEffect } from "react";
 import { poppins700, poppins400, poppins500, poppins600 } from "../app/fonts";
 import { toast } from "react-toastify";
@@ -13,12 +13,7 @@ const BusinessTableTailwind = ({ rows }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [filter, setFilter] = useState("All");
   const { data: session } = useSession();
-  const [isMobileView, setIsMobileView] = useState(600);
-  // useEffect(() => {
-  //   const handleResize = () => setIsMobileView(window.innerWidth <= 600);
-  //   window.addEventListener("resize", handleResize);
-  //   return () => window.removeEventListener("resize", handleResize);
-  // }, []);
+
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
 
@@ -126,7 +121,7 @@ const BusinessTableTailwind = ({ rows }) => {
           />
         </div>
       </div>
-      {!isMobileView &&(<div className="w-full border border-bordergray rounded-b-md overflow-x-auto">
+      <div className="w-full border border-bordergray rounded-b-md overflow-x-auto hidden md:block">
         <table className="min-w-full bg-white">
           <thead className="bg-lightgray border-b border-bordergray">
             <tr>
@@ -159,58 +154,48 @@ const BusinessTableTailwind = ({ rows }) => {
             ))}
           </tbody>
         </table>
-      </div>)}
-      {isMobileView && (
-        <div className="border border-bordergray">
-          {currentItems?.map((row,index) => (
-            <div
-              key={row._id}
-              className="flex flex-col p-4 border-b border-bordergray"
-            >
-              <div >
-                <div className="flex- flex-col">
-                  <div className="flex flex-row ">
-                    <div className="flex justify-content items-center">
-                      <span className="mt-3">{index+1}</span>
-                      </div>
-                      <div>
-                      <Link href={`/allbusiness/${row._id}`}>
-                    <span className="ml-6 text-blue-500 hover:underline">{row.businessName}</span>
-                  </Link>
-                        <span
-                          className={`${poppins400.className} text-[10px]  ml-2 ${row.isProfileApproved ? "text-atextgreen bg-abggreen  px-2 rounded-full" : " bg-pbggray  px-2 rounded-full"}`}
-                        >
-                          {row.isProfileApproved ? "Approved" : "Pending"}
-                        </span>
-                      </div>
-                     
-                    </div>
+      </div>
+      <div className="block md:hidden border border-bordergray">
+        {currentItems?.map((row, index) => (
+          <div
+            key={row._id}
+            className="flex flex-col p-4 border-b border-bordergray"
+          >
+            <div>
+              <div className="flex flex-col">
+                <div className="flex flex-row">
+                  <div className="flex justify-content items-center">
+                    <span className="mt-3">{index + 1}</span>
                   </div>
-                  <div>
-                    <div className="flex flex-row ml-8 items-center space-x-1">
-                      <span
-                        
-                        className={`${poppins400.className} text-textgray text-[12px]`}
-                      >
-                        {row.businessCategories && row.businessCategories.length > 0 ? row.businessCategories.map(category => category.categoryName).join(", ") : ""}
-                      </span>
-                      {row.businessCategories && row.businessCategories.length > 0 &&(<span className={`${poppins400.className} text-[12px]`}>
-                        •
-                      </span>)}
-                      <span
-                        className={`${poppins400.className} text-[12px] text-textgray`}
-                      >
-                        {row.businessAddress ? row.businessAddress.city : ''}
-                      </span>
-                      
-                    </div>
+                  <div className="flex justify-content items-center">
+                  <Link href={`/allbusiness/${row._id}`}>
+                    <span className=" ml-6 hover:underline">{row.businessName}</span>
+                  </Link>
+                    <span
+                      className={`${poppins400.className} text-[10px] ml-2 ${row.isProfileApproved ? "text-atextgreen bg-abggreen px-2 rounded-full" : " bg-pbggray px-2 rounded-full"}`}
+                    >
+                      {row.isProfileApproved ? "Approved" : "Pending"}
+                    </span>
                   </div>
                 </div>
               </div>
-            
-          ))}
-        </div>
-      )}
+              <div>
+                <div className="flex flex-row ml-8 items-center space-x-1">
+                  <span className={`${poppins400.className} text-textgray text-[12px]`}>
+                    {row.businessCategories && row.businessCategories.length > 0 ? row.businessCategories.map(category => category.categoryName).join(", ") : ""}
+                  </span>
+                  {row.businessCategories && row.businessCategories.length > 0 && (
+                    <span className={`${poppins400.className} text-[12px]`}>•</span>
+                  )}
+                  <span className={`${poppins400.className} text-[12px] text-textgray`}>
+                    {row.businessAddress ? row.businessAddress.city : ''}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
       <div className="pagination flex mt-2 mb-6">
         <button
           onClick={() => paginate(currentPage - 1)}
