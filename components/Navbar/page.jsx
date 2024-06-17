@@ -86,7 +86,7 @@ const Navbar = () => {
               </Link>
             ) : (
               <a
-                href="mailto:someone@example.com"
+                href="mailto:contact@dengo.io"
                 className="flex items-center space-x-2"
               >
                 <svg
