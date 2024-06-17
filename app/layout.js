@@ -7,6 +7,7 @@ import Navbar from "../components/Navbar/page"
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import {SelectedOptionProvider} from "../context/SelectOptionContext";
+import Sidebar from "../components/Sidebar";
 
 export const metadata = {
   title: "DengoAdmin",

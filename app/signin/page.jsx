@@ -78,7 +78,7 @@ const Page = () => {
                 />
                 <label
                   for="email-address"
-                  className={` ${poppins400.className} absolute text-[14px] text-textgray dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-tealblue peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1`}
+                  className={` ${poppins400.className} absolute text-[14px] text-textgray dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-tealblue peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1`}
                 >
                   Email address
                 </label>
@@ -101,12 +101,12 @@ const Page = () => {
                     setPassword(e.target.value);
                   }}
                   required
-                  class={` ${poppins400.className} block px-[16px] py-[13.5px] w-full text-[14px] text-textgray bg-transparent rounded-[4px] border border-bordergray appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer`}
+                  class={` ${poppins400.className} block px-[16px] py-[13.5px] w-full text-[14px] text-textgray bg-transparent rounded-[4px] border border-bordergray appearance-none focus:outline-none focus:ring-0 focus:border-tealblue focus:border-[2px] peer`}
                   placeholder=" "
                 />
                 <label
                   for="password"
-                  className={` ${poppins400.className} absolute text-[14px] text-textgray dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-tealblue peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1`}
+                  className={` ${poppins400.className} absolute text-[14px] text-textgray dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-tealblue peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1`}
                 >
                   Password
                 </label>

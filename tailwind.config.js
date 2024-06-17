@@ -11,6 +11,13 @@ module.exports = {
         'half': 'inset(0 0 0 50%)',
       },
       colors: {
+        'dgray':"#E4E4E4",
+          'bgcornflower':'#EDF6FE',
+          'pbggray':'#EDEDED',
+          'textcornflower':'#2084B1',
+          'atextgreen':'#0D8728',
+          'abggreen':'#D5F6DC',
+          'customegray':'#D1D5DB',
           'customBlue': 'rgb(50, 121, 148)',
           'tealblue': '#327994',
           'dengoorange': '#CF2D21',

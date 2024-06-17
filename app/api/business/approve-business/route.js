@@ -3,23 +3,8 @@ import { User } from "../../../../models/user";
 
 export async function POST(req) {
   const { userId, businessUserId, approve } = await req.json();
-  console.log(userId,businessUserId,approve,"Backend request ");
+  console.log(businessUserId,approve,"Backend request ");
   try {
-    const admin = await User.findById(userId);
-    if (!admin) {
-      return NextResponse.json(
-        { error: "User not found", success: false },
-        { status: 404 }
-      );
-    }
-
-    if (admin.role !== "admin") {
-      return NextResponse.json(
-        { error: "User is not an admin", success: false },
-        { status: 403 }
-      );
-    }
-
     const business = await User.findById(businessUserId);
 
     if (!business) {

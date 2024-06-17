@@ -1,11 +1,15 @@
-import {Poppins, Sevillana } from 'next/font/google'
+import {Poppins, Sevillana, Source_Sans_3 } from 'next/font/google'
  
 export const sevillana = Sevillana({ 
     subsets: ['latin'],
     weight:["400"],
     variable: '--font-Sevillana',
   });
- 
+  export const source_sans = Source_Sans_3({ 
+    subsets: ['latin'],
+    weight:["400"],
+
+  });
 export const poppins700 = Poppins({
     subsets: ['latin'],
     weight:['700'],

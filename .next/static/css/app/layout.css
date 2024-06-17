@@ -585,6 +585,9 @@ video {
 .mb-1 {
   margin-bottom: 0.25rem;
 }
+.mb-3 {
+  margin-bottom: 0.75rem;
+}
 .mb-4 {
   margin-bottom: 1rem;
 }
@@ -593,6 +596,9 @@ video {
 }
 .ml-3 {
   margin-left: 0.75rem;
+}
+.mr-2 {
+  margin-right: 0.5rem;
 }
 .mr-\[7px\] {
   margin-right: 7px;
@@ -609,6 +615,9 @@ video {
 .mt-4 {
   margin-top: 1rem;
 }
+.mt-6 {
+  margin-top: 1.5rem;
+}
 .mt-7 {
   margin-top: 1.75rem;
 }
@@ -620,6 +629,9 @@ video {
 }
 .mt-\[60px\] {
   margin-top: 60px;
+}
+.mb-\[16px\] {
+  margin-bottom: 16px;
 }
 .block {
   display: block;
@@ -640,6 +652,9 @@ video {
 .h-10 {
   height: 2.5rem;
 }
+.h-6 {
+  height: 1.5rem;
+}
 .h-\[31px\] {
   height: 31px;
 }
@@ -651,6 +666,9 @@ video {
 }
 .w-48 {
   width: 12rem;
+}
+.w-6 {
+  width: 1.5rem;
 }
 .w-\[70px\] {
   width: 70px;
@@ -693,6 +711,9 @@ video {
 }
 .appearance-none {
   appearance: none;
+}
+.flex-row {
+  flex-direction: row;
 }
 .flex-col {
   flex-direction: column;
@@ -774,6 +795,10 @@ video {
 .bg-blue-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(59 130 246 / var(--tw-bg-opacity));
+}
+.bg-dengologored {
+  --tw-bg-opacity: 1;
+  background-color: rgb(254 87 87 / var(--tw-bg-opacity));
 }
 .bg-lightcornblue {
   --tw-bg-opacity: 1;
@@ -885,8 +910,14 @@ video {
 .text-\[16px\] {
   font-size: 16px;
 }
+.text-\[20px\] {
+  font-size: 20px;
+}
 .text-\[22px\] {
   font-size: 22px;
+}
+.text-\[28px\] {
+  font-size: 28px;
 }
 .text-\[40px\] {
   font-size: 40px;
@@ -917,9 +948,17 @@ video {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
 }
+.text-blue-500 {
+  --tw-text-opacity: 1;
+  color: rgb(59 130 246 / var(--tw-text-opacity));
+}
 .text-cornblue {
   --tw-text-opacity: 1;
   color: rgb(32 132 177 / var(--tw-text-opacity));
+}
+.text-green-500 {
+  --tw-text-opacity: 1;
+  color: rgb(34 197 94 / var(--tw-text-opacity));
 }
 .text-green-800 {
   --tw-text-opacity: 1;
@@ -1036,10 +1075,6 @@ video {
 
   .md\:float-left {
     float: left;
-  }
-
-  .md\:hidden {
-    display: none;
   }
 }
 @media (min-width: 1024px) {

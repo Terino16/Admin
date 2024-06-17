@@ -45,7 +45,7 @@ const Navbar = () => {
           <div className="relative flex items-center space-x-4">
             {session?.user.firstName && (
               <Link
-                href="/admin"
+                href="/allbusiness"
                 className={`text-black font-semibold hover:underline ${poppins400.className} text-[14px] leading-[21px]`}
               >
                 {session.user.firstName || "Admin"}
@@ -62,7 +62,7 @@ const Navbar = () => {
               />
             </button>
             {dropdownOpen && (
-              <div className="absolute top-10 right-0 mt-2 w-48 bg-white border rounded-md shadow-lg">
+              <div className="absolute top-10 right-0 mt-2 w-48 bg-white  rounded-md shadow-md">
                 {/* <div className="py-2 px-4 text-gray-700">
                   {session.user.email}
                 </div> */}

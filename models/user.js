@@ -1,6 +1,5 @@
 // models/user.js
 import mongoose from "mongoose";
-
 const businessAddressSchema = new mongoose.Schema(
   {
     streetAddress: {
@@ -32,7 +31,6 @@ const businessAddressSchema = new mongoose.Schema(
     timestamps: true,
   }
 );
-
 const businessHoursSchema = new mongoose.Schema(
   {
     monday: {
@@ -180,7 +178,6 @@ const businessHoursSchema = new mongoose.Schema(
     timestamps: true,
   }
 );
-
 const businessImageSchema = new mongoose.Schema(
   {
     imageUrl: {
@@ -204,7 +201,35 @@ const businessImageSchema = new mongoose.Schema(
     timestamps: true,
   }
 );
-
+const categories = [
+  "Restaurant",
+  "Bar",
+  "Coffee Shop",
+  "Bakery",
+  "Retail Store",
+  "Salon/Barber",
+  "Spa/Wellness",
+  "Fitness/Gym",
+  "Grocery Store",
+  "Other",
+];
+const CategorySchema = new mongoose.Schema(
+  {
+    categoryId: {
+      type: String,
+      required: true,
+      default: "",
+    },
+    categoryName: {
+      type: String,
+      required: true,
+      enum: categories,
+    },
+  },
+  {
+    timestamps: true,
+  }
+);
 const userSchema = new mongoose.Schema(
   {
     firstName: {
@@ -264,7 +289,7 @@ const userSchema = new mongoose.Schema(
       required: false, // change to true
     },
     businessCategories: {
-      type: [String],
+      type: [CategorySchema],
       required: false, // change to true
     },
     businessDescription: {
@@ -289,10 +314,19 @@ const userSchema = new mongoose.Schema(
       type: [businessImageSchema],
       required: false, // change to true
     },
+    resetToken: {
+      type: String,
+      required: false,
+      default: "",
+    },
+    resetTokenExpiry: {
+      type: Date,
+      required: false,
+      default: "",
+    },
   },
   {
     timestamps: true,
   }
 );
-
 export const User = mongoose.models.User || mongoose.model("User", userSchema);
