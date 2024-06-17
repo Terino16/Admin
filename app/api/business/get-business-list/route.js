@@ -8,7 +8,6 @@ export async function GET() {
     const businesses = await User.find({
       role: "user",
     });
-    console.log(businesses);
     return NextResponse.json({ businesses, success: true }, { status: 200 });
   } catch (e) {
     return NextResponse.json(

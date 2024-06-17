@@ -3,7 +3,6 @@ import { User } from "../../../../models/user";
 
 export async function POST(req) {
   const { userId, businessUserId, approve } = await req.json();
-  console.log(businessUserId,approve,"Backend request ");
   try {
     const business = await User.findById(businessUserId);
 
