@@ -1,4 +1,4 @@
-"use client";
+"use client"
 import React, { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import { poppins400, poppins500, poppins600, poppins700 } from "../../fonts";
@@ -88,6 +88,8 @@ const BusinessDetailPage = () => {
   const isCategoryChecked = (categoryName) => {
     return business?.businessCategories?.some(b => b.categoryName === categoryName);
   };
+
+
   
   if (error) {
     return (

@@ -1,7 +1,7 @@
-"use client";
+"use client"
 import React, { useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { SelectedOptionProvider, useSelectedOption } from "../../context/SelectOptionContext";
+import { useSelectedOption } from "../../context/SelectOptionContext";
 import Sidebar from "../../components/Sidebar";
 import Business from "../../components/Business";
 import { useSession } from "next-auth/react";
