@@ -8,7 +8,6 @@ import BusinessImages from "../../../components/BusinessImages";
 import BusinessHours from "../../../components/BusinessHours";
 import Sidebar from "../../../components/Sidebar";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-
 const categories = [
   { id: 1, name: "Restaurant" },
   { id: 2, name: "Coffee Shop" },
@@ -48,7 +47,6 @@ const BusinessDetailPage = () => {
         if (!success) {
           throw new Error(error || "Failed to fetch");
         }
-        console.log(business.businessCategories);
         setBusiness(business);
         setApprove(business.isProfileApproved);
       } catch (error) {

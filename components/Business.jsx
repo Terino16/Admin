@@ -9,7 +9,6 @@ import { toast } from "react-toastify";
 
 export default function Business() {
   const { data: session } = useSession();
-  console.log(session, "Admin");
   const [businesses, setBusinesses] = useState([]);
 
   useEffect(() => {

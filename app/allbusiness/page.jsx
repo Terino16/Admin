@@ -13,7 +13,6 @@ const Page = () => {
   const router = useRouter();
 
   useEffect(() => {
-    console.log("No session found")
     if (status=='unauthenticated') {
       router.push("/");
     }

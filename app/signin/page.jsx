@@ -22,7 +22,6 @@ const Page = () => {
  })
 
   const handleSignin = async (e) => {
-    console.log("Sign in");
     e.preventDefault();
     try {
       const res = await signIn("credentials", {
@@ -39,7 +38,8 @@ const Page = () => {
         router.replace("/allbusiness")
       }
     } catch (error) {
-      // console.error("An unexpected error happened:", error);
+
+
       toast.error("An unexpected error happened");
     }
   };
