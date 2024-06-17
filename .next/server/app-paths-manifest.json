@@ -1,0 +1,10 @@
+{
+  "/signin/page": "app/signin/page.js",
+  "/api/auth/[...nextauth]/route": "app/api/auth/[...nextauth]/route.js",
+  "/allbusiness/page": "app/allbusiness/page.js",
+  "/api/business/get-business-list/route": "app/api/business/get-business-list/route.js",
+  "/page": "app/page.js",
+  "/allbusiness/[_id]/page": "app/allbusiness/[_id]/page.js",
+  "/api/business/get-business/route": "app/api/business/get-business/route.js",
+  "/api/business/approve-business/route": "app/api/business/approve-business/route.js"
+}

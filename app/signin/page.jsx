@@ -16,7 +16,13 @@ const Page = () => {
   const { data: session, status } = useSession(); // Use data for session data
   const router = useRouter();
 
-  // console.log(session, "Session from Sign In"); // Optional: Log session data
+
+  useEffect(()=>{
+    if(status==="authenticated")
+      router.push("/allbusiness")
+  },[status])
+
+
 
   const handleSignin = async (e) => {
     console.log("Sign in");
