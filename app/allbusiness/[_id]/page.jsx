@@ -89,6 +89,11 @@ const BusinessDetailPage = () => {
     return business?.businessCategories?.some(b => b.categoryName === categoryName);
   };
 
+  const handleBackClick = () => {
+    if (typeof window !== "undefined") {
+      window.location.href = "/allbusiness";
+    }
+  };
 
   
   if (error) {
@@ -118,9 +123,7 @@ const BusinessDetailPage = () => {
         <div className="flex lg:flex-row lg:items-center items-start flex-col lg:justify-between  ">
           <span className="flex items-center space-x-[14px]">
             <button
-              onClick={() => {
-                window.location.href = "/allbusiness";
-              }}
+            onClick={handleBackClick}
             >
               <ArrowBackIcon />
             </button>
