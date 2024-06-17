@@ -8,7 +8,6 @@ import { useSession } from "next-auth/react";
 
 
 const Page = () => {
-  const { selectedOption } = useSelectedOption();
   const { data: session,status } = useSession();
   const router = useRouter();
 

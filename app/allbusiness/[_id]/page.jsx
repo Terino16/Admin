@@ -1,6 +1,7 @@
 "use client"
 import React, { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { poppins400, poppins500, poppins600, poppins700 } from "../../fonts";
 import BusinessLocation from "../../../components/BusinessLocation";
 import BusinessDetails from "../../../components/BusinessDetails";
@@ -24,6 +25,7 @@ const BusinessDetailPage = () => {
   const [business, setBusiness] = useState(null);
   const [error, setError] = useState(null);
   const [approve, setApprove] = useState(false);
+  const router=useRouter();
 
   const { _id } = useParams();
 
@@ -90,9 +92,7 @@ const BusinessDetailPage = () => {
   };
 
   const handleBackClick = () => {
-    if (typeof window !== "undefined") {
-      window.location.href = "/allbusiness";
-    }
+   router.replace("/allbusiness");
   };
 
   
