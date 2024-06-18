@@ -146,8 +146,8 @@ const BusinessTableTailwind = ({ rows }) => {
                 </td>
                 <td className={`${poppins400.className} text-[14px] py-6 w-[190px] text-center`}>{row.businessAddress ? row.businessAddress.city : ''}</td>
                 <td className="py-6 w-[160px] text-center">
-                  <span className={`${poppins400.className} text-[14px] ${row.isProfileApproved ? "text-atextgreen bg-abggreen py-1 px-3 rounded-full" : " bg-pbggray py-1 px-3 rounded-full"}`}>
-                    {row.isProfileApproved ? "Approved" : "Pending"}
+                  <span className={`${poppins400.className} text-[14px] ${row.isProfileApproved === null ? "bg-gray-100 text-gray-600 py-1 px-3 rounded-full" : row.isProfileApproved ? "text-green-600 bg-green-100 py-1 px-3 rounded-full" : "text-red-600 bg-red-100 py-1 px-3 rounded-full"}`}>
+                    {row.isProfileApproved === null ? "Pending" : row.isProfileApproved ? "Approved" : "Not Approved"}
                   </span>
                 </td>
               </tr>
@@ -172,9 +172,9 @@ const BusinessTableTailwind = ({ rows }) => {
                     <span className=" ml-6 hover:underline">{row.businessName}</span>
                   </Link>
                     <span
-                      className={`${poppins400.className} text-[10px] ml-2 ${row.isProfileApproved ? "text-atextgreen bg-abggreen px-2 rounded-full" : " bg-pbggray px-2 rounded-full"}`}
+                      className={`${poppins400.className} text-[10px] ${row.isProfileApproved === null ? "bg-gray-100 text-gray-600 px-2 rounded-full" : row.isProfileApproved ? "text-green-600 bg-green-100 px-2 rounded-full" : "text-red-600 bg-red-100 px-2 rounded-full"}`}
                     >
-                      {row.isProfileApproved ? "Approved" : "Pending"}
+                      {row.isProfileApproved === null ? "Pending" : row.isProfileApproved ? "Approved" : "Not Approved"}
                     </span>
                   </div>
                 </div>

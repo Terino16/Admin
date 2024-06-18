@@ -24,7 +24,7 @@ const categories = [
 const BusinessDetailPage = () => {
   const [business, setBusiness] = useState(null);
   const [error, setError] = useState(null);
-  const [approve, setApprove] = useState(false);
+  const [approve, setApprove] = useState(null);
 
   const { _id } = useParams();
 
@@ -68,7 +68,7 @@ const BusinessDetailPage = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({businessUserId: _id, approve: status }),
+        body: JSON.stringify({ businessUserId: _id, approve: status }),
       });
 
       if (!res.ok) {
@@ -88,9 +88,11 @@ const BusinessDetailPage = () => {
   };
 
   const isCategoryChecked = (categoryName) => {
-    return business?.businessCategories?.some(b => b.categoryName === categoryName);
+    return business?.businessCategories?.some(
+      (b) => b.categoryName === categoryName
+    );
   };
-  
+
   if (error) {
     return (
       <div className={`container mx-auto p-4 ${poppins400.className}`}>
@@ -124,7 +126,9 @@ const BusinessDetailPage = () => {
             >
               <ArrowBackIcon />
             </button>
-            <p className={`${poppins700.className} text-[30px] leading-[45px] `}>
+            <p
+              className={`${poppins700.className} text-[30px] leading-[45px] `}
+            >
               Business Details
             </p>
           </span>
@@ -142,17 +146,29 @@ const BusinessDetailPage = () => {
             <button
               className={`${
                 poppins600.className
-              } text-[14px] leading-[21px] rounded-[5px] border border-bordergray px-[18px] py-[8px] ${
-                !approve ? "text-lightgray" : "text-black"
+              } text-[14px] leading-[21px] rounded-[5px] border border-lightgray px-[18px] py-[8px] ${
+                !approve ? "text-bordergray" : "text-black"
               }`}
               onClick={() => handleApprovalChange(false)}
             >
               Disapprove
             </button>
             <button
-              className={`${poppins400.className} text-[14px] leading-[15px] rounded-[20px] text-green-600 bg-green-100 p-[8px]`}
+              className={`${
+                poppins400.className
+              } text-[14px] leading-[15px] rounded-[20px] p-[8px] ${
+                approve === null
+                  ? "bg-gray-100 text-gray-600"
+                  : approve
+                  ? "bg-green-100 text-green-600"
+                  : "bg-red-100 text-red-600"
+              }`}
             >
-              {approve ? "Approved" : "Not Approved"}
+              {approve === null
+                ? "Pending"
+                : approve
+                ? "Approved"
+                : "Not Approved"}
             </button>
           </span>
         </div>
@@ -178,11 +194,11 @@ const BusinessDetailPage = () => {
                   key={cat.id}
                   className={`${poppins400.className} text-[14px] leading-[21px] flex items-center`}
                 >
-                  <input 
-                    type="checkbox" 
+                  <input
+                    type="checkbox"
                     className="mr-2  rounded-[4px] w-[18px] h-[18px] accent-tealblue"
                     checked={isCategoryChecked(cat.name)}
-                    readOnly 
+                    readOnly
                   />
                   {cat.name}
                 </label>

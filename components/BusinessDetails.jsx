@@ -48,11 +48,11 @@ const BusinessDetails = ({ business }) => {
       </div>
 
       <div className="space-y-[8px]">
-        <p className={`${poppins500.className} text-[16px] leading-[24px]`}>
+        <p className={`${poppins500.className} text-[16px] leading-[24px] `}>
           Business Website
         </p>
         <p
-          className={`${poppins400.className} border border-bordergray py-[13.5px] px-[16px] rounded-[4px] text-[14px] leading-[21px]`}
+          className={`${poppins400.className} border border-bordergray min-h-[47px]  py-[13.5px] px-[16px] rounded-[4px] text-[14px] leading-[21px]`}
         >
           {business.businessWebsite} 
         </p>
@@ -70,7 +70,7 @@ const BusinessDetails = ({ business }) => {
         <p
           className={`${poppins400.className} absolute right-6 bottom-6 text-textgray`}
         >
-          {1500 - business.description?.length()}
+          {500 - business.description?.length()}
         </p>
       </div>
     </div>
