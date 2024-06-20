@@ -82,7 +82,7 @@ const BusinessTableTailwind = ({ rows }) => {
   };
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col w-full">
       <div className="flex flex-col md:flex-row justify-between md:items-center border border-bordergray rounded-t-md">
         <div className="item-left space-x-3">
           <button
