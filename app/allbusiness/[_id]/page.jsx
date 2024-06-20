@@ -137,8 +137,9 @@ const BusinessDetailPage = () => {
               className={`${
                 poppins600.className
               } text-[14px] leading-[21px] rounded-[5px] border ${
-                approve ? "text-lightgray" : "text-black"
+                approve!=null && approve==true? "text-bordergray" : "text-black"
               } border-bordergray px-[18px] py-[8px]`}
+              disabled={approve}
               onClick={() => handleApprovalChange(true)}
             >
               Approve
@@ -147,8 +148,9 @@ const BusinessDetailPage = () => {
               className={`${
                 poppins600.className
               } text-[14px] leading-[21px] rounded-[5px] border border-lightgray px-[18px] py-[8px] ${
-                !approve ? "text-bordergray" : "text-black"
+                approve!=null && approve==false ? "text-bordergray" : "text-black"
               }`}
+              disabled={!approve}
               onClick={() => handleApprovalChange(false)}
             >
               Disapprove
