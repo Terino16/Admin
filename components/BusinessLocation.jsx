@@ -11,12 +11,12 @@ const BusinessLocation = ({business}) => {
             <div className="lg:flex lg:items-center w-full lg:space-x-[18px] lg:space-y-0 space-y-[18px]">
             <div className=" basis-[50%] space-y-[8px]">
               <p
-                className={`${poppins500.className} text-[16px] leading-[24px]`}
+                className={`${poppins500.className} text-[14px] leading-[24px]`}
               >
                 Business Address
               </p>
               <p
-                className={`${poppins400.className} border border-bordergray py-[13.5px] px-[16px] rounded-[4px] w-full text-[16px] leading-[24px]`}
+                className={`${poppins400.className} border border-bordergray py-[13.5px] px-[16px] rounded-[4px] w-full text-[14px] leading-[24px]`}
               >
                 {business.businessAddress.streetAddress}
               </p>
@@ -24,12 +24,12 @@ const BusinessLocation = ({business}) => {
 
             <div className="basis-[50%] space-y-[8px] ">
               <p
-                className={`${poppins500.className} text-[16px] leading-[24px]`}
+                className={`${poppins500.className} text-[14px] leading-[24px]`}
               >
                Apt/Suite/Other (Optional)
               </p>
               <p
-                className={`${poppins400.className} border border-bordergray  py-[13.5px] px-[16px] rounded-[4px] w-full text-[16px] leading-[24px] `}
+                className={`${poppins400.className} border border-bordergray  py-[13.5px] px-[16px] rounded-[4px] w-full text-[14px] leading-[24px] `}
               >
                 {business.businessAddress.streetAddress}
               </p>
@@ -39,24 +39,24 @@ const BusinessLocation = ({business}) => {
             <div className="lg:flex lg:items-center w-full lg:space-x-[18px] space-y-[18px] lg:space-y-0">
             <div className="basis-[33%] space-y-[8px]">
               <p
-                className={`${poppins500.className} text-[16px] leading-[24px]`}
+                className={`${poppins500.className} text-[14px] leading-[24px]`}
               >
                 City
               </p>
               <p
-                className={`${poppins400.className} border border-bordergray py-[13.5px] px-[16px] rounded-[4px] w-full text-[16px] leading-[24px]`}
+                className={`${poppins400.className} border border-bordergray py-[13.5px] px-[16px] rounded-[4px] w-full text-[14px] leading-[24px]`}
               >
                   {business.businessAddress.city}
               </p>
             </div>
             <div className=" basis-[33%] space-y-[8px]">
               <p
-                className={`${poppins500.className} text-[16px] leading-[24px]`}
+                className={`${poppins500.className} text-[14px] leading-[24px]`}
               >
                State
               </p>
               <p
-                className={`${poppins400.className} border border-bordergray  py-[13.5px] px-[16px] rounded-[4px] w-full text-[16px] leading-[24px] `}
+                className={`${poppins400.className} border border-bordergray  py-[13.5px] px-[16px] rounded-[4px] w-full text-[14px] leading-[24px] `}
               >
                 {business.businessAddress.state}
               </p>
@@ -65,12 +65,12 @@ const BusinessLocation = ({business}) => {
 
             <div className=" basis-[33%] space-y-[8px]">
               <p
-                className={`${poppins500.className} text-[16px] leading-[24px]`}
+                className={`${poppins500.className} text-[14px] leading-[24px]`}
               >
                Zipcode
               </p>
               <p
-                className={`${poppins400.className} border border-bordergray  py-[13.5px] px-[16px] rounded-[4px] w-full text-[16px] leading-[24px] `}
+                className={`${poppins400.className} border border-bordergray  py-[13.5px] px-[16px] rounded-[4px] w-full text-[14px] leading-[24px] `}
               >
                {business.businessAddress.zipCode}
               </p>

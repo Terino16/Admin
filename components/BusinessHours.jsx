@@ -16,7 +16,7 @@ const BusinessHours = ({ business }) => {
                 return (
                   <div key={day} className="mb-6">
                     <div className="flex flex-row" style={{ width: '590px'}}>
-                      <div className={`text-[16px] ${poppins500.className} mb-6 w-[160px] md:w-[260px]`}>
+                      <div className={`text-[14px] ${poppins500.className} mb-6 w-[160px] md:w-[260px]`}>
                         {day.charAt(0).toUpperCase() + day.slice(1)}
                       </div>
                       <div className={`text-[14px] ${poppins400.className} mb-6 flex flex-col`}>
@@ -42,7 +42,7 @@ const BusinessHours = ({ business }) => {
               return (
                 <div key={day} className="mb-6">
                   <div className="flex flex-row" style={{ width: '590px'}}>
-                    <div className={`text-[16px] ${poppins500.className} mb-6 w-[160px] md:w-[260px]`}>
+                    <div className={`text-[14px] ${poppins500.className} mb-6 w-[160px] md:w-[260px]`}>
                       {day.charAt(0).toUpperCase() + day.slice(1)}
                     </div>
                     <div className={`text-[14px] ${poppins400.className} mb-6 flex flex-col`}>

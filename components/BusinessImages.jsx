@@ -6,7 +6,7 @@ const BusinessImages = ({ business }) => {
   //console.log(business);
   return (
     <div className="lg:border w-full border-bordergray lg:p-[24px] space-y-[22px] rounded-[6px] mt-[16px]">
-      <p className={`${poppins600.className} text-[16px] leading-[24px]`}>
+      <p className={`${poppins600.className} text-[14px] leading-[24px]`}>
         Gallery
       </p>
       <div className="flex flex-wrap lg:justify-start justify-between">

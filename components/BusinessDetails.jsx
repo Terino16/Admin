@@ -5,29 +5,29 @@ const BusinessDetails = ({ business }) => {
   return (
     <div className="lg:border w-full border-bordergray lg:p-[24px] space-y-[22px] py-[22px] lg:rounded-[6px] mt-[16px]">
       <div className="space-y-[8px]">
-        <p className={`${poppins500.className} text-[16px] leading-[24px]`}>
+        <p className={`${poppins500.className} text-[14px] leading-[24px]`}>
           Business Name
         </p>
         <p
-          className={`${poppins400.className} border border-bordergray py-[13.5px] px-[16px] rounded-[4px] w-full text-[16px] leading-[24px]`}
+          className={`${poppins400.className} border border-bordergray py-[13.5px] px-[16px] rounded-[4px] w-full text-[14px] leading-[24px]`}
         >
           {business.businessName}
         </p>
       </div>
 
       <div className="space-y-[8px]">
-        <p className={`${poppins500.className} text-[16px] leading-[24px]`}>
+        <p className={`${poppins500.className} text-[14px] leading-[24px]`}>
           Email
         </p>
         <p
-          className={`${poppins400.className} border border-bordergray py-[13.5px] px-[16px] rounded-[4px] w-full text-[16px] leading-[24px]`}
+          className={`${poppins400.className} border border-bordergray py-[13.5px] px-[16px] rounded-[4px] w-full text-[14px] leading-[24px]`}
         >
           {business.email}
         </p>
       </div>
 
       <div className="space-y-[8px]">
-        <p className={`${poppins500.className} text-[16px] leading-[24px]`}>
+        <p className={`${poppins500.className} text-[14px] leading-[24px]`}>
           Phone Number
         </p>
         <span className="flex items-center border border-bordergray py-[13.5px] px-[16px] rounded-[4px] w-full  ">
@@ -48,7 +48,7 @@ const BusinessDetails = ({ business }) => {
       </div>
 
       <div className="space-y-[8px]">
-        <p className={`${poppins500.className} text-[16px] leading-[24px] `}>
+        <p className={`${poppins500.className} text-[14px] leading-[24px] `}>
           Business Website
         </p>
         <p
@@ -59,11 +59,11 @@ const BusinessDetails = ({ business }) => {
       </div>
 
       <div className="space-y-[8px] relative">
-        <p className={`${poppins500.className} text-[16px] leading-[24px]`}>
+        <p className={`${poppins500.className} text-[14px] leading-[24px]`}>
           Description
         </p>
         <p
-          className={`${poppins400.className} border border-bordergray h-[176px] py-[13.5px] px-[16px] rounded-[4px] w-full text-[16px] leading-[24px] `}
+          className={`${poppins400.className} border border-bordergray h-[176px] py-[13.5px] px-[16px] rounded-[4px] w-full text-[14px] leading-[24px] `}
         >
           {business.businessDescription}
         </p>

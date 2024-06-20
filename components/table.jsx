@@ -9,7 +9,7 @@ import { source_sans } from "../app/fonts";
 
 const BusinessTableTailwind = ({ rows }) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage] = useState(6);
+  const [itemsPerPage] = useState(10);
   const [searchTerm, setSearchTerm] = useState("");
   const [filter, setFilter] = useState("All");
   const { data: session } = useSession();
@@ -84,21 +84,21 @@ const BusinessTableTailwind = ({ rows }) => {
   return (
     <div className="flex flex-col">
       <div className="flex flex-col md:flex-row justify-between md:items-center border border-bordergray rounded-t-md">
-        <div className="item-left">
+        <div className="item-left space-x-3">
           <button
-            className={`${poppins400.className} ml-4 my-5 py-1 px-2 rounded-md ${filter === 'All' ? 'bg-bgcornflower text-textcornflower' : ''}`}
+            className={`${poppins400.className} ml-4 text-[14px]  my-5 py-1 px-2 rounded-md ${filter === 'All' ? 'bg-bgcornflower text-textcornflower' : ''}`}
             onClick={() => setFilter("All")}
           >
             All
           </button>
           <button
-            className={`${poppins400.className} my-5 py-1 px-2 rounded-md ${filter === 'Approved' ? 'bg-bgcornflower text-textcornflower' : ''}`}
+            className={`${poppins400.className} my-5 py-1 text-[14px] px-2 rounded-md ${filter === 'Approved' ? 'bg-bgcornflower text-textcornflower' : ''}`}
             onClick={() => setFilter("Approved")}
           >
             Approved
           </button>
           <button
-            className={`${poppins400.className} my-5 py-1 px-2 rounded-md ${filter === 'Pending' ? 'bg-bgcornflower text-textcornflower' : ''}`}
+            className={`${poppins400.className} my-5 text-[14px] py-1 px-2 rounded-md ${filter === 'Pending' ? 'bg-bgcornflower text-textcornflower' : ''}`}
             onClick={() => setFilter("Pending")}
           >
             Pending
