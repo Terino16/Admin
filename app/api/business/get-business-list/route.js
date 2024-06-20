@@ -6,7 +6,7 @@ export async function GET() {
   await connectMongo();
   try {
     const businesses = await User.find({
-      role: "user",
+      role: "business",
     });
     console.log(businesses);
     return NextResponse.json({ businesses, success: true }, { status: 200 });
