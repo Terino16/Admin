@@ -9,12 +9,19 @@ import { toast } from "react-toastify";
 import { poppins700, poppins400, poppins600, poppins500 } from "../fonts";
 import Link from "next/link";
 
+
+
 const Page = () => {
   const [email, setEmail] = React.useState("");
   const [emailError, setEmailError] = React.useState(null);
   const [password, setPassword] = React.useState("");
   const { data: session, status } = useSession(); // Use data for session data
   const router = useRouter();
+
+  useEffect(()=>{
+    if(status=="authenticated")
+      window.location.href="/allbusiness"
+  })
 
   // console.log(session, "Session from Sign In"); // Optional: Log session data
 
